@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Services | Royal Grace Cathedral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/new/css/main.css">
+    <style>
+        /* Service Schedule Section */
+        .service-schedule {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .service-schedule::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .schedule-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background-color: var(--cream);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-header {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--white);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .service-header h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--gold-light);
+        }
+
+        .service-time {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .service-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .service-features {
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features i {
+            color: var(--gold);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .service-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-small {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Worship Experience Section */
+        .worship-experience {
+            background-color: var(--navy);
+            color: var(--white);
+            position: relative;
+        }
+
+        .worship-experience::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .worship-experience .section-header h2 {
+            color: var(--white);
+        }
+
+        .worship-experience .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .worship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .worship-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 40px 30px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .worship-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--gold), var(--gold-dark));
+        }
+
+        .worship-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .worship-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--navy);
+            font-size: 2rem;
+        }
+
+        .worship-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--gold-light);
+        }
+
+        .worship-card p {
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Special Services Section */
+        .special-services {
+            background-color: var(--cream);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .special-service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .special-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .special-service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--navy);
+        }
+
+        .service-date {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Online Worship Section */
+        .online-worship {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .online-worship::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .online-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .online-text {
+            flex: 1;
+        }
+
+        .online-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--navy);
+        }
+
+        .online-text p {
+            margin-bottom: 25px;
+            color: var(--gray);
+        }
+
+        .online-features {
+            margin-bottom: 30px;
+        }
+
+        .online-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .online-features i {
+            color: var(--gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .online-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .online-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--gold);
+            z-index: -1;
+        }
+
+        .online-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: var(--shadow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .page-header h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .online-content {
+                flex-direction: column;
+            }
+
+            .online-image {
+                order: -1;
+                margin-bottom: 40px;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background-color: var(--navy);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 60px;
+                transition: var(--transition);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 20px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-header h2 {
+                font-size: 2.3rem;
+            }
+
+            .service-actions {
+                flex-direction: column;
+            }
+
+            .btn-small {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .schedule-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <div class="logo-text">Royal Grace <span>Cathedral</span></div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Divine Services</h1>
+                <p>Join us for worship, fellowship, and spiritual growth through our diverse range of services and
+                    programs.</p>
+                <a href="#schedule" class="btn">View Service Schedule</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Schedule Section -->
+    <section id="schedule" class="section service-schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2>Weekly Service Schedule</h2>
+                <p>Join us for worship throughout the week</p>
+            </div>
+            <div class="schedule-container">
+                <!-- Sunday Services -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Sunday Worship</h3>
+                        <div class="service-time">8:00 AM, 10:30 AM, 6:00 PM</div>
+                        <div class="service-type">Traditional & Contemporary</div>
+                    </div>
+                    <div class="service-content">
+                        <p>Our Sunday services are the cornerstone of our weekly worship, featuring inspiring messages,
+                            uplifting music, and a welcoming community.</p>
+                    </div>
+                </div>
+
+                <!-- Midweek Service -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Wednesday Evening</h3>
+                        <div class="service-time">7:00 PM</div>
+                        <div class="service-type">Bible Study & Prayer</div>
+                    </div>
+                    <div class="service-content">
+                        <p>Our midweek service provides an opportunity for deeper Bible study, prayer, and fellowship in
+                            a more intimate setting.</p>
+                    </div>
+                </div>
+
+                <!-- Additional Services -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Friday Prayer</h3>
+                        <div class="service-time">12:00 PM</div>
+                        <div class="service-type">Prayer Gathering</div>
+                    </div>
+                    <div class="service-content">
+                        <p>Join us for our weekly prayer gathering where we lift up our community, nation, and world in
+                            prayer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Worship Experience Section -->
+    <section class="section worship-experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Worship Experience</h2>
+                <p>Discover the different ways we worship and connect with God</p>
+            </div>
+            <div class="worship-grid">
+                <div class="worship-card">
+                    <div class="worship-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Traditional Worship</h3>
+                    <p>Experience the beauty of traditional hymns, liturgy, and the rich heritage of our faith in a
+                        reverent atmosphere.</p>
+                </div>
+                <div class="worship-card">
+                    <div class="worship-icon">
+                        <i class="fas fa-guitar"></i>
+                    </div>
+                    <h3>Contemporary Worship</h3>
+                    <p>Engage with God through modern worship music, multimedia presentations, and relevant teaching for
+                        today's world.</p>
+                </div>
+                <div class="worship-card">
+                    <div class="worship-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Family Worship</h3>
+                    <p>Services designed for the whole family with interactive elements, engaging teaching, and
+                        age-appropriate activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Services Section -->
+    <section class="section special-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Special Services</h2>
+                <p>Join us for these meaningful services throughout the year</p>
+            </div>
+            <div class="services-grid">
+                <div class="special-service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1544442471-ce493f4f1c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+                            alt="Christmas Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Christmas Eve Candlelight</h3>
+                        <span class="service-date">December 24, 7:00 PM & 11:00 PM</span>
+                        <p>Celebrate the birth of Christ with beautiful music, Scripture readings, and a candlelight
+                            ceremony.</p>
+                    </div>
+                </div>
+                <div class="special-service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1516557070064-3bc28ddd293a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+                            alt="Easter Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Easter Sunrise Service</h3>
+                        <span class="service-date">April 9, 6:30 AM</span>
+                        <p>Join us at dawn to celebrate the resurrection of Christ with a powerful outdoor service.</p>
+                    </div>
+                </div>
+                <div class="special-service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1580301762386-5b5d0c27d464?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+                            alt="Baptism Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Baptism Services</h3>
+                        <span class="service-date">Quarterly - Next: June 11</span>
+                        <p>Celebrate new life in Christ through baptism. Contact us if you're interested in being
+                            baptized.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Worship Section -->
+    <section class="section online-worship">
+        <div class="container">
+            <div class="section-header">
+                <h2>Online Worship</h2>
+                <p>Join us from anywhere in the world</p>
+            </div>
+            <div class="online-content">
+                <div class="online-text">
+                    <h3>Experience Our Services Online</h3>
+                    <p>Can't join us in person? Our online services bring the worship experience directly to you,
+                        wherever you are.</p>
+                    <ul class="online-features">
+                        <li><i class="fas fa-check"></i> Live streaming of all Sunday services</li>
+                        <li><i class="fas fa-check"></i> On-demand access to previous services</li>
+                        <li><i class="fas fa-check"></i> Interactive online prayer and chat</li>
+                        <li><i class="fas fa-check"></i> Digital giving options</li>
+                        <li><i class="fas fa-check"></i> Virtual small groups and classes</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="#" class="btn">Watch Live</a>
+                        <a href="#" class="btn btn-outline">View Sermon Archive</a>
+                    </div>
+                </div>
+                <div class="online-image">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+                        alt="Online Worship">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Royal Grace Cathedral</h3>
+                    <p>A place of worship, fellowship, and spiritual growth for all people. Join us as we seek to know
+                        God and make Him known.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Divine Services</a></li>
+                        <li><a href="ministries.html"><i class="fas fa-chevron-right"></i> Ministries</a></li>
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Service Times</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sunday: 8:00 AM & 10:30 AM</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Wednesday: 7:00 PM</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Friday Prayer: 12:00 PM</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Online: Anytime</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Grace Avenue, Serenity City</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> (555) 123-4567</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@royalgrace.org</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Office Hours: Mon-Thu 9AM-5PM</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Royal Grace Cathedral. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(10, 25, 49, 0.98)';
+                header.style.padding = '15px 0';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 25, 49, 0.95)';
+                header.style.padding = '20px 0';
+            }
+        });
+    </script>
+</body>
+
+</html>

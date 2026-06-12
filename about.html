@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Royal Grace Cathedral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/new/css/main.css">
+    <style>
+        /* About Intro Section */
+        .about-intro {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .about-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .about-intro-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-intro-text {
+            flex: 1;
+        }
+
+        .about-intro-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--navy);
+        }
+
+        .about-intro-text p {
+            margin-bottom: 25px;
+            color: var(--gray);
+        }
+
+        .about-intro-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-intro-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--gold);
+            z-index: -1;
+        }
+
+        .about-intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: var(--shadow);
+        }
+
+        /* Mission & Values Section */
+        .mission-values {
+            background-color: var(--navy);
+            color: var(--white);
+            position: relative;
+        }
+
+        .mission-values::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .mission-values .section-header h2 {
+            color: var(--white);
+        }
+
+        .mission-values .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .mission-values-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mission-card,
+        .values-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 40px 30px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card::before,
+        .values-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--gold), var(--gold-dark));
+        }
+
+        .mission-card:hover,
+        .values-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .mission-icon,
+        .values-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--navy);
+            font-size: 2rem;
+        }
+
+        .mission-card h3,
+        .values-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--gold-light);
+            text-align: center;
+        }
+
+        .mission-card p,
+        .values-card p {
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        .values-list {
+            text-align: left;
+        }
+
+        .values-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .values-list i {
+            color: var(--gold);
+            margin-right: 15px;
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Video Card Section */
+        .video-section {
+            background-color: var(--cream);
+            padding: 100px 0;
+        }
+
+        .video-card {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            background: var(--navy);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(10, 25, 49, 0.7), rgba(10, 25, 49, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+            opacity: 1;
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .video-card.playing .video-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-overlay h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--gold-light);
+        }
+
+        .video-overlay p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .play-btn:hover::before {
+            opacity: 1;
+        }
+
+        .play-btn i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Leadership Section */
+        .leadership {
+            background-color: var(--cream);
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .leader-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .leader-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .leader-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .leader-card:hover .leader-image img {
+            transform: scale(1.1);
+        }
+
+        .leader-content {
+            padding: 25px;
+            position: relative;
+        }
+
+        .leader-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--navy);
+        }
+
+        .leader-position {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .leader-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .leader-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .leader-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(10, 25, 49, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            color: var(--navy);
+        }
+
+        .leader-social a:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            transform: translateY(-3px);
+            color: var(--navy);
+        }
+
+        /* History Section */
+        .history {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .history::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -13px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border: 4px solid var(--white);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -13px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--navy);
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .page-header h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-intro-content {
+                flex-direction: column;
+            }
+
+            .about-intro-image {
+                order: -1;
+                margin-bottom: 40px;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 18px;
+            }
+
+            .left::after,
+            .right::after {
+                left: 18px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            .video-overlay h3 {
+                font-size: 1.8rem;
+            }
+
+            .video-overlay p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background-color: var(--navy);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 60px;
+                transition: var(--transition);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 20px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-header h2 {
+                font-size: 2.3rem;
+            }
+
+            .video-overlay {
+                padding: 20px;
+            }
+
+            .video-overlay h3 {
+                font-size: 1.6rem;
+            }
+
+            .video-overlay p {
+                font-size: 0.9rem;
+            }
+
+            .play-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .mission-values-content {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .video-overlay h3 {
+                font-size: 1.4rem;
+            }
+
+            .video-overlay p {
+                font-size: 0.85rem;
+                margin-bottom: 20px;
+            }
+
+            .play-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <div class="logo-text">Royal Grace <span>Cathedral</span></div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>About Royal Grace Cathedral</h1>
+                <p>Discover our rich history, mission, and the values that guide our community of faith, hope, and love.
+                </p>
+                <a href="#history" class="btn">Explore Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Intro Section -->
+    <section class="section about-intro">
+        <div class="container">
+            <div class="about-intro-content">
+                <div class="about-intro-text">
+                    <h3>A Legacy of Faith and Community</h3>
+                    <p>Founded in 1952, Royal Grace Cathedral has been a beacon of hope and spiritual guidance for
+                        generations. Our journey began with a small group of faithful believers who envisioned a
+                        sanctuary where all could experience God's grace and love.</p>
+                    <p>Today, we continue that legacy through worship, community outreach, and spiritual development
+                        programs that transform lives and strengthen our community.</p>
+                    <a href="#mission" class="btn btn-outline">Our Mission & Values</a>
+                </div>
+                <div class="about-intro-image">
+                    <img src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+                        alt="Royal Grace Cathedral Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section id="mission" class="section mission-values">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Mission & Values</h2>
+                <p>The guiding principles that shape our community and ministries</p>
+            </div>
+            <div class="mission-values-content">
+                <!-- Mission Card -->
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To proclaim the Gospel of Jesus Christ, nurture spiritual growth, and serve our community with
+                        compassion and love.</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+
+                <!-- Values Card -->
+                <div class="values-card">
+                    <div class="values-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <ul class="values-list">
+                        <li><i class="fas fa-cross"></i> Faith in Christ as our foundation</li>
+                        <li><i class="fas fa-hands-helping"></i> Service to others in love</li>
+                        <li><i class="fas fa-users"></i> Community and fellowship</li>
+                        <li><i class="fas fa-pray"></i> Prayer and spiritual growth</li>
+                        <li><i class="fas fa-hand-holding-heart"></i> Compassion and grace</li>
+                    </ul>
+                </div>
+
+                <!-- Additional Cards -->
+                <div class="values-card">
+                    <div class="values-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be a transformative Christian community where lives are renewed, hope is restored, and God's
+                        love is experienced by all.</p>
+                    <a href="#" class="btn btn-outline">Our Future Plans</a>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Community Outreach</h3>
+                    <p>We actively serve our local community through food drives, shelter programs, and partnerships
+                        with local organizations.</p>
+                    <a href="#" class="btn btn-outline">Get Involved</a>
+                </div>
+
+                <div class="values-card">
+                    <div class="values-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Biblical Foundation</h3>
+                    <p>Our teachings and ministries are rooted in Scripture, providing a solid foundation for faith and
+                        practice.</p>
+                    <a href="#" class="btn btn-outline">Study With Us</a>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Missions</h3>
+                    <p>We support mission work around the world, sharing the Gospel and providing humanitarian aid to
+                        those in need.</p>
+                    <a href="#" class="btn btn-outline">Support Missions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Video Card Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-card" id="videoCard">
+                <div class="video-container">
+                    <iframe id="churchVideo" src="https://www.youtube.com/embed/beojGaNMIo8?enablejsapi=1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-overlay">
+                    <h3>Experience Our Community</h3>
+                    <p>Watch this short video to see the life and ministry of Royal Grace Cathedral in action.</p>
+                    <div class="play-btn" id="playButton">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="section leadership">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Leadership</h2>
+                <p>Meet the dedicated team guiding our spiritual community</p>
+            </div>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://images.unsplash.com/photo-1580301762386-5b5d01a912d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80"
+                            alt="Pastor John Smith">
+                    </div>
+                    <div class="leader-content">
+                        <h3>Rev. John Smith</h3>
+                        <span class="leader-position">Senior Pastor</span>
+                        <p>With over 20 years of ministry experience, Pastor John provides spiritual guidance and
+                            leadership to our congregation.</p>
+                        <div class="leader-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1090&q=80"
+                            alt="Pastor Sarah Johnson">
+                    </div>
+                    <div class="leader-content">
+                        <h3>Rev. Sarah Johnson</h3>
+                        <span class="leader-position">Associate Pastor</span>
+                        <p>Pastor Sarah oversees our community outreach programs and youth ministry with passion and
+                            dedication.</p>
+                        <div class="leader-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Deacon Michael Brown">
+                    </div>
+                    <div class="leader-content">
+                        <h3>Michael Brown</h3>
+                        <span class="leader-position">Head Deacon</span>
+                        <p>Michael coordinates our volunteer teams and ensures the smooth operation of our church
+                            facilities and events.</p>
+                        <div class="leader-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="section history">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our History</h2>
+                <p>Celebrating over 70 years of faith, service, and community</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1952</span>
+                        <h3>Foundation</h3>
+                        <p>Royal Grace Cathedral was founded by Rev. Thomas Anderson with just 35 members meeting in a
+                            small rented space.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1965</span>
+                        <h3>First Building</h3>
+                        <p>Our first permanent building was completed, providing a dedicated space for worship and
+                            community gatherings.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1980</span>
+                        <h3>Expansion</h3>
+                        <p>A major expansion added the fellowship hall and educational wing to accommodate our growing
+                            congregation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2005</span>
+                        <h3>Cathedral Completion</h3>
+                        <p>The current cathedral building was completed, featuring stunning architecture and enhanced
+                            facilities.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2020</span>
+                        <h3>Digital Ministry</h3>
+                        <p>We launched our online ministry, reaching a global audience with live-streamed services and
+                            digital resources.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Royal Grace Cathedral</h3>
+                    <p>A place of worship, fellowship, and spiritual growth for all people. Join us as we seek to know
+                        God and make Him known.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Divine Services</a></li>
+                        <li><a href="ministries.html"><i class="fas fa-chevron-right"></i> Ministries</a></li>
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Service Times</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sunday: 8:00 AM & 10:30 AM</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Wednesday: 7:00 PM</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Friday Prayer: 12:00 PM</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Online: Anytime</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Grace Avenue, Serenity City</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> (555) 123-4567</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@royalgrace.org</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Office Hours: Mon-Thu 9AM-5PM</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Royal Grace Cathedral. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Video Play Functionality
+        const videoCard = document.getElementById('videoCard');
+        const playButton = document.getElementById('playButton');
+        const churchVideo = document.getElementById('churchVideo');
+
+        playButton.addEventListener('click', () => {
+            // Add playing class to trigger animation
+            videoCard.classList.add('playing');
+
+            // Play the video
+            churchVideo.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+
+            // Add animation to play button
+            playButton.style.transform = 'scale(1.3)';
+            playButton.style.opacity = '0';
+
+            setTimeout(() => {
+                playButton.style.display = 'none';
+            }, 500);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(10, 25, 49, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 25, 49, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
